@@ -43,7 +43,7 @@ const VALUES = [
 export default function Home() {
     return (
     <>
-        <Head title="Techno Solusi Indonesia — Pusat Sertifikasi Terlengkap" />
+        <Head title="Siap Kerja — Sertifikasi Profesional & Kesiapan Kerja" />
         <HeroSection />
         <CategoriesSection categories={CERTIFICATION_CATEGORIES} />
         <AboutSection missions={MISSIONS} />
@@ -81,10 +81,10 @@ function HeroSection() {
 
                 {/* Judul Utama dengan gradasi premium */}
                 <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight mb-5 bg-gradient-to-r from-blue-800 to-cyan-700 bg-clip-text text-transparent animate-fade-in-up">
-                Solusi Sertifikasi Terdepan untuk Bisnis Anda
+                    Tingkatkan Kompetensi, Raih Status #SiapKerja
                 </h1>
                 <p className="mt-5 text-lg lg:text-2xl/9 text-gray-700 max-w-3xl mx-auto animate-fade-in-up delay-300">
-                Kami bermitra dengan Anda untuk mencapai standar kualitas, keamanan, dan operasional kelas dunia.
+                    Kami membantu para profesional dan perusahaan mencapai standar keahlian tertinggi melalui sertifikasi terpercaya.
                 </p>
 
                 <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-400">
@@ -170,9 +170,11 @@ function AboutSection({ missions }) {
             <div className="animate-fade-in-up">
             <span className="badge badge-lg border-blue-400 text-blue-700 bg-blue-50 mb-4 px-4 py-2 text-sm font-semibold rounded-full">Tentang Kami</span>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">Mewujudkan Standar Global untuk Keunggulan Lokal</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">Mendorong Profesionalisme, Mewujudkan Kesiapan Kerja</h2>
             <p className="mt-6 text-slate-700 text-lg leading-relaxed">
-                PT Techno Solusi Indonesia adalah mitra terpercaya Anda dalam mencapai dan mempertahankan sertifikasi standar internasional. Dengan dedikasi sejak tahun 2020, kami berkomitmen untuk meningkatkan kredibilitas dan kapabilitas bisnis Anda.
+                <b>Siap Kerja</b> adalah platform terdepan untuk pengembangan kompetensi dan sertifikasi profesional. Sejak tahun 2020, kami berkomitmen penuh untuk meningkatkan kredibilitas dan kapabilitas Anda di dunia kerja.
             </p>
+
 
             <div className="mt-8 grid sm:grid-cols-3 gap-6">
                 <StatItem value="11+" label="Kategori Sertifikasi" />

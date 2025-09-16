@@ -1,6 +1,6 @@
 {
-  "name": "Techno Solusi Indonesia",
-  "short_name": "TechnoSolusi",
+  "name": "Siap Kerja",
+  "short_name": "Siap Kerja",
   "icons": [
     {
       "src": "/brand/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#2563eb",
+  "theme_color": "#2563EB",
   "background_color": "#ffffff",
   "display": "standalone"
 }
