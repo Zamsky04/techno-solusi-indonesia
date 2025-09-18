@@ -46,7 +46,7 @@ export default function Show({ service, related = [], breadcrumbs = [] }) {
 }
 
 // ===== WhatsApp helpers =====
-const DEFAULT_WA = (import.meta?.env?.VITE_WA_DEFAULT) ?? '6285311065944'
+const DEFAULT_WA = (import.meta?.env?.VITE_WA_DEFAULT) ?? '6287776667129'
 
 function normWa(num) {
   if (!num) return null

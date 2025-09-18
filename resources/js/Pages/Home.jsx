@@ -41,18 +41,57 @@ const VALUES = [
    Halaman Utama
    ========================= */
 export default function Home() {
-    return (
+  return (
     <>
-        <Head title="Siap Kerja — Sertifikasi Profesional & Kesiapan Kerja" />
-        <HeroSection />
-        <CategoriesSection categories={CERTIFICATION_CATEGORIES} />
-        <AboutSection missions={MISSIONS} />
-        <CertificateSection />
-        <ValuesSection values={VALUES} />
-        <ContactCTA />
-        </>
-    );
+        <Head>
+            <title>Siap Kerja — Konsultan Sertifikasi ISO & Kesiapan Kerja</title>
+            <meta
+            name="description"
+            content="Konsultan sertifikasi ISO (ISO 9001, ISO 14001, ISO 45001), SMK3, SKK BNSP, SBU, SLO DJK, SLF & PBG. Pendampingan ahli, proses cepat & transparan."
+            />
+            <link
+            rel="canonical"
+            href={typeof window !== 'undefined' ? window.location.href : 'https://siapkerja.co.id/'}
+            />
+
+            <meta property="og:title" content="Siap Kerja — Konsultan Sertifikasi ISO & Kesiapan Kerja" />
+            <meta property="og:description" content="Pendampingan sertifikasi ISO & kategori lain. Transparan, profesional, efisien." />
+            <meta property="og:image" content="/brand/og-cover.png" />
+            <meta property="og:type" content="website" />
+            <meta name="twitter:card" content="summary_large_image" />
+
+            <script type="application/ld+json">
+            {JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'ItemList',
+                itemListElement: CERTIFICATION_CATEGORIES.map((c, idx) => ({
+                '@type': 'ListItem',
+                position: idx + 1,
+                item: {
+                    '@type': 'Service',
+                    name: c.title,
+                    description: c.desc,
+                    areaServed: 'ID',
+                    url: c.directSlug
+                    ? `https://siapkerja.co.id/sertifikasi/${c.directSlug}`
+                    : `https://siapkerja.co.id/sertifikasi?category=${encodeURIComponent(c.filterValue)}`
+                }
+                }))
+            })}
+            </script>
+        </Head>
+        <div data-theme="light" className="force-light bg-white text-slate-800">
+            <HeroSection />
+            <CategoriesSection categories={CERTIFICATION_CATEGORIES} />
+            <AboutSection missions={MISSIONS} />
+            <CertificateSection />
+            <ValuesSection values={VALUES} />
+            <ContactCTA />
+        </div>
+    </>
+  );
 }
+
 
 Home.layout = page => <MainLayout children={page} />;
 
@@ -73,13 +112,11 @@ function HeroSection() {
 
             <div className="relative z-10 container mx-auto px-4 text-center">
             <div className="max-w-4xl mx-auto">
-                {/* Logo Mitra (BNSP & Kemenaker) */}
                 <div className="flex justify-center items-center gap-6 mb-6 opacity-80 animate-fade-in-up delay-200">
-                    <img src="/logo/logo-bnsp.png" alt="Logo BNSP" className="h-12 md:h-16 object-contain" /> {/* Ganti dengan path logo BNSP Anda */}
-                    <img src="/logo/logo-kemnaker.png" alt="Logo Kemenaker" className="h-12 md:h-16 object-contain" /> {/* Ganti dengan path logo Kemenaker Anda */}
+                    <img src="/logo/logo-bnsp.png" width="256" height="64" alt="Logo BNSP" className="h-12 md:h-16 object-contain" loading="lazy" />
+                    <img src="/logo/logo-kemnaker.png" width="256" height="64" alt="Logo Kemenaker" className="h-12 md:h-16 object-contain" loading="lazy" />
                 </div>
 
-                {/* Judul Utama dengan gradasi premium */}
                 <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight mb-5 bg-gradient-to-r from-blue-800 to-cyan-700 bg-clip-text text-transparent animate-fade-in-up">
                     Tingkatkan Kompetensi, Raih Status #SiapKerja
                 </h1>
@@ -169,8 +206,12 @@ function AboutSection({ missions }) {
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-up">
             <span className="badge badge-lg border-blue-400 text-blue-700 bg-blue-50 mb-4 px-4 py-2 text-sm font-semibold rounded-full">Tentang Kami</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">Mewujudkan Standar Global untuk Keunggulan Lokal</h2>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">Mendorong Profesionalisme, Mewujudkan Kesiapan Kerja</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
+            Mewujudkan Standar Global untuk Keunggulan Lokal
+            </h2>
+            <p className="mt-3 font-semibold text-slate-900">
+            Mendorong Profesionalisme, Mewujudkan Kesiapan Kerja
+            </p>
             <p className="mt-6 text-slate-700 text-lg leading-relaxed">
                 <b>Siap Kerja</b> adalah platform terdepan untuk pengembangan kompetensi dan sertifikasi profesional. Sejak tahun 2020, kami berkomitmen penuh untuk meningkatkan kredibilitas dan kapabilitas Anda di dunia kerja.
             </p>

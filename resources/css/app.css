@@ -119,6 +119,7 @@
 /* Animation utility classes */
 .animate-fade-in-up {
   animation: fade-in-up 0.6s ease-out forwards;
+  -webkit-animation: fade-in-up 0.6s ease-out forwards;
 }
 
 .animate-float {
@@ -500,3 +501,38 @@ html {
 /* polished small btn enhancement */
 .btn-enhanced { transition: transform .2s ease, filter .2s ease; }
 .btn-enhanced:hover { transform: translateY(-1px); filter: brightness(1.05); }
+
+.force-light {
+  /* pastikan semua komponen DaisyUI di dalamnya pakai palet terang */
+  --b1: 0 0% 100%;      /* base-100: white */
+  --b2: 210 40% 96%;    /* base-200: slate-50-ish */
+  --b3: 210 40% 94%;    /* base-300 */
+  --bc: 222 47% 11%;    /* base-content: slate-900 */
+
+  --p: 217 91% 60%;     /* primary */
+  --pf: 217 91% 50%;    /* primary focus/darker */
+
+  color-scheme: light;  /* form controls / native UI */
+  scrollbar-width: thin;                       /* Firefox */
+  scrollbar-color: #3b82f6 #eef2f7;            /* thumb / track (Firefox) */
+}
+
+/* WebKit scrollbars – scope di dalam .force-light */
+.force-light ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.force-light ::-webkit-scrollbar-track {
+  background: #eef2f7 !important;             /* track terang */
+  border-radius: 6px;
+}
+
+.force-light ::-webkit-scrollbar-thumb {
+  background: #3b82f6 !important;             /* thumb biru */
+  border-radius: 6px;
+}
+
+.force-light ::-webkit-scrollbar-thumb:hover {
+  background: #2563eb !important;             /* sedikit lebih gelap saat hover */
+}
